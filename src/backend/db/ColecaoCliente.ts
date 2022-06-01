@@ -4,19 +4,19 @@ import ClienteRepositorio from "../../core/ClienteRepositorio";
 
 export default class ColecaoCliente implements ClienteRepositorio {
 
-    private conversor = {
+    #conversor = {
         toFirestore(cliente: Cliente) {
-            return{
+            return {
                 nome: cliente.nome,
                 idade: cliente.idade,
             }
         },
         fromFirestore(snapshot: firebase.firestore.QueryDocumentSnapshot, options: firebase.firestore.SnapshotOptions): Cliente {
-            const dados = snapshot?.data(options)
-            return new Cliente (dados.nome, dados.idade, snapshot.id)
+            const dados = snapshot.data(options)
+            return new Cliente(dados.nome, dados.idade, snapshot.id)
         }
     }
-
+    
     async salvar(cliente: Cliente): Promise<Cliente> {
         if(cliente?.id) {
             await this.colecao().doc(cliente.id).set(cliente)
@@ -40,6 +40,6 @@ export default class ColecaoCliente implements ClienteRepositorio {
     private colecao() {
         return firebase
             .firestore().collection('clientes')
-            .withConverter(this.conversor)
+            .withConverter(this.#conversor)
     }
 }

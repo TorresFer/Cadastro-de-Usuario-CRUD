@@ -1,10 +1,9 @@
 import Cliente from "./Cliente"
 
-
-export default interface ClienteRepositorio{
+export default interface ClienteRepositorio {
     salvar(cliente: Cliente): Promise<Cliente>
     excluir(cliente: Cliente): Promise<void>
-    obterTodos(cliente: Cliente): Promise<Cliente[]>
+    obterTodos(): Promise<Cliente[]>
 }
 
 //Interface criada direta no TS para se referir ao DB do Firebase com o intuito
