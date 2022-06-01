@@ -1,22 +1,17 @@
 ## Projeto CRUD
-O objetivo desse projeto foi criar um formulário com CRUD utilizando ferramentas modernas para aplicação Web.
+O objetivo desse projeto foi criar um formulário com "CRUD" utilizando ferramentas modernas na criação Web.
+Neste projeto, é possível criar um novo cliente, salvar suas informações, editar e excluir. Além disso, a conexão
+com o Firebase no backend fornece um novo id sempre que um novo cliente é criado.
 
-Frontend:
+## Stack
 - TypeScript
 - NextJS
 - TailwindCSS
-
-Backend:
 - Firebase
 - API Rest
 
 ## Link
-Acesse o projeto neste link:
-
-## Deploy on Vercel
-[Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-[Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+*Acesse o projeto neste link:
 
 _____________________________
 
